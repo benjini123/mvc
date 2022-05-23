@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/min/dropzone.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="section-one">
+      <div class="section-one__container">
+        <form class="section-one__form-nombre" action="">
+          <label for="name">Nombre:</label>
+          <input name="name" placeholder="insert your name" />
+        </form>
+        <form class="section-one__form-bio" action="">
+          <label for="bio">Bio:</label>
+          <textarea name="bio" placeholder="insert your bio"></textarea>
+        </form>
+        <div>
+          <button class="foto-input"></button>
+        </div>
+        <button class="section-one__boton-guardar">guardar</button>
+      </div>
+      <script>
+        // la url la exige la librería
+        const myDropzone = new Dropzone(".foto-input", {
+          url: "/falsa",
+          autoProcessQueue: false,
+        });
+
+        myDropzone.on("thumbnail", function (file) {
+          // usando este evento pueden acceder al dataURL directamente
+          console.log(file.dataURL);
+        });
+      </script>
+    </section>
+  </body>
+</html>

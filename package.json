@@ -1,0 +1,25 @@
+{
+  "name": "auth",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev:be": "nodemon --watch './be-src/index.ts' --exec 'ts-node ./be-src/index.ts' ",
+    "build:be": "tsc ./be-src",
+    "build:fe": "tsc ./fe-src",
+    "start": "node ./be-dist/index.ts",
+    "build": "npm run build:be && npm run build:fe",
+    "sync": "ts-node ./db/sync.ts"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "dropzone": "^6.0.0-beta.2",
+    "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1",
+    "nodemon": "^2.0.15",
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
+    "process": "^0.11.10",
+    "sequelize": "^6.19.0"
+  }
+}

@@ -1,0 +1,16 @@
+body{
+  margin: 0;
+  background-color: red;
+}
+
+.section-one{
+  height: auto;
+  background-color: red;
+}
+
+.section-one__container{
+  display: flex;
+  flex-direction: column;
+  height: 20px;
+  padding: 20px;
+}
